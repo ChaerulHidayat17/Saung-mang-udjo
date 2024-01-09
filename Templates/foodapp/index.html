@@ -31,7 +31,7 @@
           <li class="nav-item active">
             <a class="nav-link" id="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
           </li>
-          {% if request.session.CustId is None and request.session.AdminId is not None %}
+          {% if request.session.CustId is not None and request.session.AdminId is None %}
           <li class="nav-item active">
             <a class="nav-link" id="nav-link" href="addfoods">Add Food <span class="sr-only">(current)</span></a>
           </li>

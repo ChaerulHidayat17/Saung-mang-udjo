@@ -39,7 +39,7 @@
           <li class="nav-item active">
             <a class="nav-link" id="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
           </li>
-          {% if request.session.CustId is None and request.session.AdminId is not None %}
+          {% if request.session.CustId is not None and request.session.AdminId is None %}
           <li class="nav-item active">
             <a class="nav-link" id="nav-link" href="addfoods">Add Food <span class="sr-only">(current)</span></a>
           </li>
@@ -100,6 +100,7 @@
           <p class="price">{{f.FoodPrice}}</p>
           {% if request.session.CustId is not None and request.session.AdminId is None %}
           <p><a href="/addtocart/{{f.FoodId}}"><button>Add to Cart</button></a></p>
+          <p><a href="/editfood/{{f.FoodId}}"><button>Edit</button></a></p>
           {% endif %}
           {% if request.session.CustId is None and request.session.AdminId is not None %}
           <p><a href="/getfood/{{f.FoodId}}"><button>Update</button></a></p>
